@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login Profesional</title>
+  <!-- Carga de estilos-->
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons (opcional) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="login-card">
+    <div class="text-center mb-4">
+      <div class="logo">Macs Bank+</div>
+      <p class="text-muted">Inicia sesión en tu cuenta</p>
+    </div>
+    <form>
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Usuario</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-person"></i></span>
+          <input type="text" class="form-control" id="user" placeholder="Ingresa tu usuario" required>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-lock"></i></span>
+          <input type="password" class="form-control" id="password" placeholder="Tu contraseña" required>
+        </div>
+      </div>
+
+      <!-- Remember + Forgot -->
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="rememberMe">
+          <label class="form-check-label" for="rememberMe">Recordarme</label>
+        </div>
+        <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
+      </div>
+
+      <!-- Submit -->
+      <div class="d-grid mb-3">
+        <button type="button" class="btn btn-login btn-lg text-white" id="iniciar">Iniciar sesión</button>
+      </div>
+
+      <!-- Register -->
+      <div class="text-center">
+        <p class="mb-0">¿No tienes cuenta? <a href="registro.html" class="text-decoration-none">Regístrate</a></p>
+      </div>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
