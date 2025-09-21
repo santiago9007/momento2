@@ -8,6 +8,22 @@ function registrar() {
 
     const guardarUsuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
+    // Validar campos obligatorios
+    if (
+        !usuario.id ||
+        !usuario.nombre ||
+        !usuario.apellido ||
+        !usuario.telefono ||
+        !usuario.direccion ||
+        !usuario.email ||
+        !usuario.userName ||
+        !usuario.password ||
+        !confirmPass
+    ) {
+        alert("⚠️ Todos los campos son obligatorios.");
+        return;
+    }
+
     if (usuario.password !== confirmPass) {
         alert("🚫 Las contraseñas no coinciden.");
         return;
@@ -37,7 +53,7 @@ function registrar() {
     localStorage.setItem("usuarios", JSON.stringify(guardarUsuarios));
     alert("✅ Usuario registrado con éxito.");
 
-    document.getElementById("registroForm").reset();
+    window.location.href = "index.html"
 }
 
     document.addEventListener("DOMContentLoaded", () => {
