@@ -1,13 +1,16 @@
  class Usuario{
-    constructor(id, nombres, apellidos, telefono, direccion, email, userName, password){
+    constructor(id, nombre, apellido, telefono, direccion, email, userName, password, tipoCuenta, nroCuenta, saldo = 0){
         this.id = id
-        this.nombres = nombres
-        this.apellidos = apellidos
+        this.nombre = nombre
+        this.apellido = apellido
         this.direccion = direccion
         this.telefono = telefono
         this.email = email
         this.userName = userName
         this.password = password
+        this.tipoCuenta = tipoCuenta
+        this.nroCuenta = nroCuenta
+        this.saldo = saldo
     }
     captura(){
       
@@ -19,6 +22,8 @@
         this.email = document.getElementById("email").value;
         this.userName = document.getElementById("user").value;
         this.password = document.getElementById("password").value;
+        this.tipoCuenta = document.querySelector('input[name="tipoCuenta"]:checked')?.value || ""
+
     }
 
     loginCaptura() {

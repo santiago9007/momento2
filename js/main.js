@@ -1,11 +1,11 @@
 import Usuario from "./registro.js";
+import Ahorros from "./ahorros.js";
 
 function registrar() {
     const usuario = new Usuario();
     usuario.captura();
 
     const confirmPass = document.getElementById("confirmPassword").value.trim();
-
     const guardarUsuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
     // Validar campos obligatorios
@@ -35,10 +35,18 @@ function registrar() {
         return;
     }
 
+    // Crear cuenta de ahorros asociada al usuario
+    const nuevaCuenta = new Ahorros(
+        usuario.id,
+        usuario.nombre,
+        usuario.apellido,
+        usuario.telefono,
+        usuario.direccion,
+        usuario.email
+    );
 
     guardarUsuarios.push({
         id: usuario.id,
-        documento: usuario.documento,
         nombre: usuario.nombre,
         apellido: usuario.apellido,
         telefono: usuario.telefono,
@@ -46,21 +54,28 @@ function registrar() {
         email: usuario.email,
         userName: usuario.userName,
         password: usuario.password,
-        saldo: 0,
+        cuenta: nuevaCuenta.cuenta,   // Número de cuenta generado
+        saldo: nuevaCuenta.saldo,     // Saldo inicial
+        tasa: nuevaCuenta.tasa,       // Tasa de interés
+        fecha: nuevaCuenta.fecha,     // Fecha de apertura
         movimientos: []
     });
 
     localStorage.setItem("usuarios", JSON.stringify(guardarUsuarios));
-    alert("✅ Usuario registrado con éxito.");
+    alert(`✅ Usuario registrado con éxito. 
+Cuenta creada: ${nuevaCuenta.cuenta}`);
 
-    window.location.href = "index.html"
+    window.location.href = "index.html";
 }
 
-    document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("registrarse").addEventListener("click", registrar);
+// Registro
+document.addEventListener("DOMContentLoaded", () => {
+    const btnRegistrar = document.getElementById("registrarse");
+    if (btnRegistrar) btnRegistrar.addEventListener("click", registrar);
 });
 
-let intentos = 3; // declara intentos fuera para que persista entre intentos
+// Login
+let intentos = 3;
 
 function loginUsuario() {
     const usuario = new Usuario();
@@ -72,27 +87,25 @@ function loginUsuario() {
     );
 
     if (validarUsuario) {
-        alert("✅ Bienvenido al sistema");
-        intentos = 3; // resetear intentos en éxito
+        alert(`✅ Bienvenido ${validarUsuario.nombre}`);
+        window.location.href = "dashboard.html";
+        intentos = 3;
     } else {
         intentos--;
-
         if (intentos > 0) {
             alert(`❌ Usuario o contraseña incorrectos. Quedan ${intentos} intentos.`);
         } else {
             alert("☠️ Cuenta bloqueada temporalmente.");
-            // acá podrías bloquear el login o manejarlo como quieras
         }
     }
 }
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const botonIniciar = document.getElementById("iniciar");
-
-        if (botonIniciar) {
-            botonIniciar.addEventListener("click", loginUsuario);
-    }
+// Login listener
+document.addEventListener("DOMContentLoaded", () => {
+    const botonIniciar = document.getElementById("iniciar");
+    if (botonIniciar) botonIniciar.addEventListener("click", loginUsuario);
 });
+
 
 
 
