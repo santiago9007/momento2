@@ -21,20 +21,21 @@
     <form>
       <div class="mb-3">
         <label class="form-label">Cuenta origen</label>
-        <input type="text" class="form-control" placeholder="Ej: 123456789">
+        <input type="text" id="cuentaOrigen" class="form-control" placeholder="Ej: 123456789">
       </div>
       <div class="mb-3">
         <label class="form-label">Cuenta destino</label>
-        <input type="text" class="form-control" placeholder="Ej: 987654321">
+        <input type="text" id="cuentaDestino" class="form-control" placeholder="Ej: 987654321">
       </div>
       <div class="mb-3">
         <label class="form-label">Monto a transferir</label>
-        <input type="number" class="form-control" placeholder="$">
+        <input type="number" id="monto" class="form-control" placeholder="$">
       </div>
       <div class="d-grid">
-        <button type="submit" class="btn btn-info text-white"><i class="bi bi-arrow-left-right me-2"></i>Confirmar Transferencia</button>
+        <button type="submit" id="btnTransferir" class="btn btn-info text-white"><i class="bi bi-arrow-left-right me-2"></i>Confirmar Transferencia</button>
       </div>
     </form>
   </div>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

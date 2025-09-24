@@ -8,6 +8,39 @@ body {
       color: #fff;
     }
 
+    .dashboard {
+      background-color: #0A1B2E;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .info-box {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .info-box p {
+      margin: 0.3rem 0;
+      font-size: 1.1rem;
+    }
+    .btn {
+      border-radius: 0.75rem;
+      font-weight: 500;
+    }
+    .btn-danger {
+      background-color: #dc3545;
+      border: none;
+    }
+
     .login-card, .dashboard {
       background-color: #0A1B2E;
       color: #fff;
