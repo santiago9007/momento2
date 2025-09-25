@@ -7,9 +7,34 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <style>
-    body { background: linear-gradient(135deg, #1f2937, #4b5563); min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: 'Segoe UI', sans-serif; color: #fff; }
-    .card-custom { background-color: #0A1B2E; padding: 2rem; border-radius: 1rem; box-shadow: 0 15px 30px rgba(0,0,0,0.1); width: 100%; max-width: 420px; text-align: center; }
-    .logo { font-size: 2rem; font-weight: bold; }
+    body { 
+      background: linear-gradient(135deg, #1f2937, #4b5563); 
+      min-height: 100vh; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-family: 'Segoe UI', sans-serif; 
+      color: #fff; 
+    }
+    .card-custom { 
+      background-color: #0A1B2E; 
+      padding: 2rem; 
+      border-radius: 1rem; 
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+      width: 100%; 
+      max-width: 420px; 
+      text-align: center; 
+    }
+    .logo { 
+      font-size: 2rem; 
+      font-weight: bold; 
+    }
+    #resultadoSaldo {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #38bdf8; /* celestico para resaltar */
+    }
   </style>
 </head>
 <body>
@@ -18,15 +43,19 @@
       <div class="logo">Macs Bank+</div>
       <h3>Consultar Saldo</h3>
     </div>
-    <form>
+    <form id="formSaldo">
       <div class="mb-3">
         <label class="form-label">Número de cuenta</label>
-        <input type="text" class="form-control" placeholder="Ej: 123456789">
+        <input type="text" id="cuentaSaldo" class="form-control" placeholder="Ej: A-000-000-000">
       </div>
       <div class="d-grid">
-        <button type="submit" class="btn btn-primary"><i class="bi bi-eye me-2"></i>Ver Saldo</button>
+        <button type="submit" id="btnConsultarSaldo" class="btn btn-primary">
+          <i class="bi bi-eye me-2"></i>Ver Saldo
+        </button>
       </div>
     </form>
+    <p id="resultadoSaldo"></p>
   </div>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

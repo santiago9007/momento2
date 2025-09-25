@@ -212,6 +212,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 })
 
+//Función consultar saldo
+
+/*function consultarSaldo(e) {
+  e.preventDefault();
+
+  // Obtener al usuario logueado
+  const usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
+
+  if (!usuarioActivo) {
+    alert("🚫 No hay ninguna sesión activa");
+    return;
+  }
+
+  // Mostrar el saldo
+  const resultadoSaldo = document.getElementById("resultadoSaldo");
+  resultadoSaldo.textContent = `💰 Saldo disponible: $${Number(usuarioActivo.saldo).toFixed(2)}`;
+}
+
+// Activar el evento
+document.addEventListener("DOMContentLoaded", () => {
+  const btnConsultar = document.getElementById("btnConsultarSaldo");
+  if (btnConsultar) {
+    btnConsultar.addEventListener("click", consultarSaldo);
+  }
+}); */
 
 
 
