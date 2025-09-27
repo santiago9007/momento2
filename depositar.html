@@ -30,6 +30,16 @@
         <label class="form-label">Número de cuenta</label>
         <input type="text" class="form-control" placeholder="Ej: 123456789">
       </div>
+      <div class="mb-3"> <!--agrego lista desplegable para indicar tipo de cuenta destino-->
+    <label for="tipo-cuenta" class="form-label">Tipo de cuenta</label>
+    <select id="tipo-cuenta" class="form-select">
+      <option selected>Selecciona un tipo de cuenta</option>
+      <option value="ahorros">Cuenta de Ahorros</option>
+      <option value="corriente">Cuenta Corriente</option>
+    </select>
+  </div>
+
+
       <div class="mb-3">
         <label class="form-label">Monto a depositar</label>
         <input type="number" class="form-control" placeholder="$">
@@ -39,5 +49,6 @@
       </div>
     </form>
   </div>
+  <script type="module" src="./js/ahorros.js"></script>
 </body>
 </html>

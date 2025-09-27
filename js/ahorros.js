@@ -9,5 +9,19 @@ class Ahorros extends Usuario{
         this.tasa = tasaInteres
         this.fecha = fechaApertura = new Date().toLocaleString()
     }
-}
+
+    realizarDepositoCtaAhorros(valorConsig){
+        if (!isNaN(valorConsig)) {
+    let saldo = parseFloat(localStorage.getItem("saldo")) || 0
+    saldo += valorConsig;
+    localStorage.setItem("saldo", saldo);
+    alert(`Consignación exitosa. Nuevo saldo: ${saldo}`);
+    } else {
+    alert("Debe ingresar valores numericos")
+    }
+
+        }
+
+    }
+
 export default Ahorros
